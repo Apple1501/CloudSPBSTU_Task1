@@ -3,7 +3,7 @@
 
 1. Для начала создаём три виртуальные машины
 
-![](Laba\Screen\Screenshot_1.png)
+![](./Laba/Screen/Screenshot_1.png)
 
 2. Сконфигурируем HostName (для Ubuntu_B) с помощью команды
 
