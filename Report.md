@@ -113,7 +113,7 @@ $ sudo systemctl status web-server
 
 # Проверка работы 
 
-1. на клиенте прописываем команды 
+1. На клиенте прописываем команды 
 
 ```shell 
 $ curl 'http://192.168.15.10:5000/'
@@ -130,6 +130,7 @@ $ sudo tcpdump -i enp0s8 tcp
 ![](./Laba/Screen/Screenshot_31.png)
 
 ![](./Laba/Screen/Screenshot_32.png)
+
 
 
 
