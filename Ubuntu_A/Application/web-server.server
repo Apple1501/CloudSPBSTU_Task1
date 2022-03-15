@@ -1,0 +1,12 @@
+[Unit]
+Description=Web-Server
+[Service]
+Type=forking
+User=primak_1
+WorkingDirectory=/home/primak_1/server/
+ExecStart=/usr/bin/python3 app.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
