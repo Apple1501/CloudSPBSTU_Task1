@@ -122,22 +122,23 @@ $ curl -X POST -d 'command=reboot' http://192.168.15.10:5000/command
 ```
 ![](./Assets/Images/Screenshot_30.png)
 
-2. Посмотрим на tcpdump
+
+2. Проверим, что настроенные правила по маршуту пакетов работают корректно.
+
+Во-первых, развёртываем на порту 5040 ещё один веб-сервер.
+
+![](./Assets/Images/Screenshot_35.png)
+
+Во-вторых, используем команду tcpdump для проверки результов работы. Отправляем с клиента запросы на сервер.
+
+![](./Assets/Images/Screenshot_37.png)
 
 ```shell 
 $ sudo tcpdump -i enp0s9 tcp
 ```
-<<<<<<< HEAD
-![](./Assets/Images/Screenshot_33.png)
-=======
-![](./Assets/Images/Screenshot_31.png)
 
-![](./Assets/Images/Screenshot_32.png)
+![](./Assets/Images/Screenshot_36.png)
 
->>>>>>> 40164099b00d48d3f130310135beaf5a30ec1944
-
-![](./Assets/Images/Screenshot_32.png)
-
-Как видно из результатов запроса, у нас есть настройка на фильтрацию пакетов по порту
+Как видно из результатов запроса, ответ на запрос клиента есть только по порту 5000. Фильтрация пакетов работает.
 
 
