@@ -3,7 +3,7 @@
 
 1. Для начала создаём три виртуальные машины
 
-![](./Assets/Screenshot_1.png)
+![](./Assets/Images/Screenshot_1.png)
 
 2. Сконфигурируем HostName (для Ubuntu_B) с помощью команды
 
@@ -11,13 +11,13 @@
 $ sudo hostnamectl set-hostname primak_gateway
 $ sudo nano /etc/hostname 
 ```
-![](./Assets/Screenshot_8.png)
+![](./Assets/Images/Screenshot_8.png)
 
 3. После этого добавляем ещё одного пользователя
 ```shell 
 $ sudo adduser primak_2
 ```
-![](./Assets/Screenshot_7.png)
+![](./Assets/Images/Screenshot_7.png)
 
 4. Перезагружаем машину. Тоже самое проделываем с Ubuntu_С.
 Меняем название хоста на primak_client. Добавляем пользователя primak_3
@@ -30,7 +30,7 @@ $ sudo vim /etc/netplan/00-installer-config.yaml
 ```
 2. Ubuntu - A
 
-![](./Assets/Screenshot_25.png)
+![](./Assets/Images/Screenshot_25.png)
 
 3. Проверяем на корректность и сохраняем файл
 
@@ -40,11 +40,11 @@ $ sudo netplan apply
 ```
 4. Ubuntu - B
 
-![](./Assets/Screenshot_26.png)
+![](./Assets/Images/Screenshot_26.png)
 
 5. Ubuntu - C
 
-![](./Assets/Screenshot_27.png)
+![](./Assets/Images/Screenshot_27.png)
 
 # Настройка шлюза
 
@@ -60,7 +60,7 @@ $ sudo echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward 1
 $  sudo vim /etc/sysctl.conf 
 ```
 
-![](./Assets/Screenshot_19.png)
+![](./Assets/Images/Screenshot_19.png)
 
 2. Настравиваем маршрут
 
@@ -81,14 +81,14 @@ $ sudo apt-get install iptables-persistent
 $ sudo iptables-save > /etc/iptables/rules.v4
 $ sudo ip6tables-save > /etc/iptables/rules.v6
 ```
-![](./Assets/Screenshot_20.png)
+![](./Assets/Images/Screenshot_20.png)
 
 
 # Cервер
 
 1. Создаём скрипт на python
 
-![](./Assets/Screenshot_29.png)
+![](./Assets/Images/Screenshot_29.png)
 
 2. С помощью systemd создаём сервис, который запускает скрипт через автозагрузку
 
@@ -97,7 +97,7 @@ $ sudo vim /lib/systemd/system/web-server.service
 ```
 3. Записываем следующий скрипт
 
-![](./Assets/Screenshot_22.png)
+![](./Assets/Images/Screenshot_22.png)
 
 4. Перезапускаем службу и активируем автозагрузку 
 
@@ -108,7 +108,7 @@ $ sudo systemctl enable web-server
 $ sudo systemctl status web-server
 ```
 
-![](./Assets/Screenshot_23.png)
+![](./Assets/Images/Screenshot_23.png)
 
 
 # Проверка работы 
@@ -120,7 +120,7 @@ $ curl 'http://192.168.15.10:5000/'
 $ curl -X PUT -d number=5 192.168.15.10:5000/number
 $ curl -X POST -d 'command=reboot' http://192.168.15.10:5000/command
 ```
-![](./Assets/Screenshot_30.png)
+![](./Assets/Images/Screenshot_30.png)
 
 2. Посмотрим на tcpdump
 
@@ -128,15 +128,15 @@ $ curl -X POST -d 'command=reboot' http://192.168.15.10:5000/command
 $ sudo tcpdump -i enp0s9 tcp
 ```
 <<<<<<< HEAD
-![](./Assets/Screenshot_33.png)
+![](./Assets/Images/Screenshot_33.png)
 =======
-![](./Assets/Screenshot_31.png)
+![](./Assets/Images/Screenshot_31.png)
 
-![](./Assets/Screenshot_32.png)
+![](./Assets/Images/Screenshot_32.png)
 
 >>>>>>> 40164099b00d48d3f130310135beaf5a30ec1944
 
-![](./Assets/Screenshot_32.png)
+![](./Assets/Images/Screenshot_32.png)
 
 Как видно из результатов запроса, у нас есть настройка на фильтрацию пакетов по порту
 
